@@ -3,9 +3,9 @@ import template from "./heroes.component.html";
 import style from "./heroes.component.scss";
 import { Hero } from '../../../../both/models/hero.model';
 import { OnInit } from '@angular/core';
-import {Observable} from "rxjs/Observable";
+import { Observable } from "rxjs/Observable";
 import { HeroService } from '../heroservice/hero.service';
-import {Router} from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "heroes",

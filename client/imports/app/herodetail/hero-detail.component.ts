@@ -6,10 +6,12 @@ import { Hero } from '../../../../both/models/hero.model';
 import {HeroService} from "../heroservice/hero.service";
 import {Observable} from "rxjs/Observable";
 import 'rxjs/add/operator/switchMap';
+import style from './hero-detail.component.scss'
 
 @Component({
     selector: 'hero-detail',
-    template: template
+    template: template,
+    styles: [ style ]
 })
 export class HeroDetailComponent implements OnInit {
 
