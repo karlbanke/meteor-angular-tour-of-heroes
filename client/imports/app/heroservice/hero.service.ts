@@ -29,4 +29,13 @@ export class HeroService {
     public update(hero: Hero): Promise<number> {
         return HeroCollection.update({"_id": hero._id}, hero).toPromise();
     }
+
+    public delete(hero: Hero) {
+        HeroCollection.remove({"_id": hero._id});
+    }
+
+    public add(name: string) {
+        let id: Mongo.ObjectID = new Mongo.ObjectID;
+        HeroCollection.insert({"_id": id.toString(), "id": 0, "name": name});
+    }
 }
