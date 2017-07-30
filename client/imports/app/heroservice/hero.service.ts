@@ -39,6 +39,6 @@ export class HeroService {
     }
 
     public search(term: string): ObservableCursor<Hero> {
-        return HeroCollection.find({ "name": "Narco"})
+        return HeroCollection.find({ name: {$regex: term }})
     }
 }
