@@ -7,6 +7,7 @@ import { HeroesComponent } from './heroes/heroes.component';
 import { HeroDetailComponent } from './herodetail/hero-detail.component';
 import { DashboardComponent}  from './dashboard/dashboard.component';
 import { AppRoutingModule }     from './app-routing.module';
+import { HeroSearchComponent } from './search/hero-search.component';
 
 @NgModule({
   // Components, Pipes, Directive
@@ -14,7 +15,8 @@ import { AppRoutingModule }     from './app-routing.module';
     AppComponent,
     HeroesComponent,
     HeroDetailComponent,
-    DashboardComponent
+    DashboardComponent,
+    HeroSearchComponent
   ],
   // Entry Components
   entryComponents: [

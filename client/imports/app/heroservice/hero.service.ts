@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { Hero } from '../../../../both/models/hero.model';
 import { HeroCollection } from '../../../../both/collections/hero.collection';
 import { ObservableCursor } from "meteor-rxjs";
-import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class HeroService {
@@ -37,5 +36,9 @@ export class HeroService {
     public add(name: string) {
         let id: Mongo.ObjectID = new Mongo.ObjectID;
         HeroCollection.insert({"_id": id.toString(), "id": 0, "name": name});
+    }
+
+    public search(term: string): ObservableCursor<Hero> {
+        return HeroCollection.find({ "name": "/.*"+term + ".*/"})
     }
 }
