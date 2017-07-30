@@ -25,4 +25,8 @@ export class HeroService {
     public getHero(id): Hero {
         return HeroCollection.findOne({"id": id});
     }
+
+    public update(hero: Hero): Promise<number> {
+        return HeroCollection.update({"_id": hero._id}, hero).toPromise();
+    }
 }
