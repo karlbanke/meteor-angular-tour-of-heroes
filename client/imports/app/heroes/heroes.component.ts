@@ -1,10 +1,11 @@
 import { Component } from "@angular/core";
 import template from "./heroes.component.html";
-import style from "../app.component.scss";
+import style from "./heroes.component.scss";
 import { Hero } from '../../../../both/models/hero.model';
 import { OnInit } from '@angular/core';
 import {Observable} from "rxjs/Observable";
 import { HeroService } from '../heroservice/hero.service';
+import {Router} from "@angular/router";
 
 @Component({
   selector: "heroes",
@@ -29,6 +30,11 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes();
   }
 
-  constructor(private heroService: HeroService) { }
+  gotoDetail(): void {
+    this.router.navigate(['/detail', this.selectedHero.id]);
+  }
+
+  constructor(private router: Router,
+              private heroService: HeroService) { }
 
 }
