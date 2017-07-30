@@ -51,7 +51,7 @@ The folder structure is a mix between [Angular 2 recommendation](https://johnpap
 
 ### Client
 
-The `client` folder contains single TypeScript (`.ts`) file which is the main file (`/client/app.component.ts`), and bootstrap's the Angular 2 application.
+The `client` folder contains single TypeScript (`.ts`) file which is the main file (`/client/heroes.component.ts`), and bootstrap's the Angular 2 application.
 
 The main component uses HTML template and SASS file.
 
