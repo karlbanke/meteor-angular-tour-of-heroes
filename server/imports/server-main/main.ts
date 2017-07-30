@@ -1,5 +1,8 @@
 import {DemoCollection} from "../../../both/collections/demo.collection";
 import {Demo} from "../../../both/models/demo.model";
+import {HeroCollection} from "../../../both/collections/hero.collection";
+import {HEROES} from "./mock-heroes";
+import {Hero} from "../../../both/models/hero.model";
 
 export class Main {
   start(): void {
@@ -20,6 +23,12 @@ export class Main {
       }];
       data.forEach((obj: Demo) => {
         DemoCollection.insert(obj);
+      });
+    }
+
+    if (HeroCollection.find({}).cursor.count() === 0) {
+      HEROES.forEach((obj: Hero) => {
+        HeroCollection.insert(obj);
       });
     }
   }

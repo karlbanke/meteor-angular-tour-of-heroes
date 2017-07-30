@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import template from "./hero-detail.component.html";
-import { Hero } from '../hero';
+import { Hero } from '../../../../both/models/hero.model';
 
 @Component({
     selector: 'hero-detail',

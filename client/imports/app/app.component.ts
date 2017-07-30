@@ -1,9 +1,10 @@
 import { Component } from "@angular/core";
 import template from "./app.component.html";
 import style from "./app.component.scss";
-import { Hero } from './hero';
+import { Hero } from '../../../both/models/hero.model';
 import { HeroService } from './heroservice/hero.service';
 import { OnInit } from '@angular/core';
+import {Observable} from "rxjs/Observable";
 
 @Component({
   selector: "app",
@@ -13,12 +14,12 @@ import { OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  heroes: Hero[];
+  heroes: Observable<Hero[]>;
   title = 'Tour of Heroes';
   selectedHero: Hero;
 
-  ngOnInit(): void {
-    this.getHeroes();
+  ngOnInit() {
+    this.heroes = this.heroService.getHeroes().zone();
   }
 
   onSelect(hero: Hero): void {
@@ -26,7 +27,7 @@ export class AppComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroService.getHeroes().then(heroes => this.heroes = heroes);
+    this.heroService.getHeroes();
   }
 
   constructor(private heroService: HeroService) { }
