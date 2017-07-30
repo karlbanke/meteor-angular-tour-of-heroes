@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Hero } from '../../../../both/models/hero.model';
 import { HeroCollection } from '../../../../both/collections/hero.collection';
 import { ObservableCursor } from "meteor-rxjs";
+import {Observable} from "rxjs/Observable";
 
 @Injectable()
 export class HeroService {
@@ -19,5 +20,9 @@ export class HeroService {
 
     public getTopHeroes(): ObservableCursor<Hero> {
         return this.topHeroes;
+    }
+
+    public getHero(id): Hero {
+        return HeroCollection.findOne({"id": id});
     }
 }
